@@ -1,0 +1,222 @@
+* {
+    /* 去除浏览器默认内外边距 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 去除input的轮廓 */
+input {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* 溢出隐藏 */
+    overflow-x: hidden;
+    display: flex;
+    /* 渐变方向从左到右 */
+    background: linear-gradient(to right, rgb(247, 209, 215), rgb(191, 227, 241));
+}
+
+/* 最外层的大盒子 */
+.outer-box {
+    width: 1200px;
+    height: 660px;
+    display: flex;
+    /* 相对定位 */
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    /* 设置圆角 */
+    border-radius: 8px;
+    /* 设置边框 */
+    border: 1px solid rgba(255, 255, 255, .6);
+    /* 设置盒子阴影 */
+    box-shadow: 2px 1px 19px rgba(0, 0, 0, .1);
+}
+
+/* 滑动的盒子 */
+.intro-box {
+    /* 宽度为大盒子的一半 */
+    width: 50%;
+    /* width: var(--width); */
+    height: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    /* 距离大盒子左侧为0 */
+    left: 0;
+    /* 距离大盒子顶部为0 */
+    top: 0;
+    z-index: 99;
+    border-radius: 4px;
+    background-color: #edd4dc;
+    box-shadow: 2px 1px 19px rgba(0, 0, 0, .1);
+}
+
+/* 滑动盒子的标题 */
+.intro-box h1 {
+    margin-top: 150px;
+    text-align: center;
+    /* 文字间距 */
+    letter-spacing: 5px;
+    color: white;
+    /* 禁止选中 */
+    user-select: none;
+    /* 文字阴影 */
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+}
+
+/* 滑动盒子的文字 */
+.intro-box p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 20px 0;
+    /* 禁止选中 */
+    user-select: none;
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+}
+
+.input-box {
+    /* 宽度为大盒子的一半 */
+    width: 50%;
+    /* width: var(--width); */
+    height: 100%;
+    right: 0;
+    position: absolute;
+    display: flex;
+    /* 纵向布局 */
+    flex-direction: column;
+    /* 水平居中 */
+    align-items: center;
+}
+
+input {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 20px;
+    text-indent: 10px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 120px;
+    /* 增加磨砂质感 */
+    backdrop-filter: blur(10px);
+}
+
+input:focus {
+    /* 光标颜色 */
+    color: #b0cfe9;
+}
+
+/* 聚焦时隐藏文字 */
+input:focus::placeholder {
+    opacity: 0;
+}
+
+/* 标题盒子 */
+.title-box {
+    height: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    /* 距离大盒子顶部为0 */
+    top: 0;
+    z-index: 99;
+    border-radius: 4px;
+}
+
+/* 标题 */
+.title-box h1 {
+    margin-top: 150px;
+    text-align: center;
+    /* 文字间距 */
+    letter-spacing: 5px;
+    color: white;
+    /* 禁止选中 */
+    user-select: none;
+    /* 文字阴影 */
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+
+}
+
+.password-box {
+    width: 50%;
+    /* width: var(--width); */
+    height: 50%;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+}
+
+/* 输入框 */
+input {
+    width: 100%;
+    height: 40px;
+    text-indent: 10px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 120px;
+    /* 增加磨砂质感 */
+    backdrop-filter: blur(10px);
+}
+
+input:focus {
+    /* 光标颜色 */
+    color: #b0cfe9;
+
+}
+
+/* 聚焦时隐藏文字 */
+input:focus::placeholder {
+    opacity: 0;
+}
+
+/* 按钮盒子 */
+.btn-box {
+    position: absolute;
+    justify-content: center;
+    /* 距离大盒子顶部为0 */
+    top: 60%;
+}
+
+/* 按钮 */
+button {
+    width: 100px;
+    height: 30px;
+    margin: 0 7px;
+    line-height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #69b3f0;
+    color: white;
+}
+
+/* 按钮悬停时 */
+button:hover {
+    /* 鼠标小手 */
+    cursor: pointer;
+    /* 透明度 */
+    opacity: 0.8;
+}
+
+/* 按钮文字 */
+.btn-box p {
+    height: 30px;
+    line-height: 30px;
+    /* 禁止选中 */
+    user-select: none;
+    font-size: 14px;
+    color: white;
+
+}
+
+.btn-box p:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
