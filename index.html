@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- import front-page.css-->
+        <!-- import index.css-->
         <link rel="stylesheet" href="index.css">
         <!-- import jquery -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -41,17 +41,16 @@
         </div>
         <!-- outermost box -->
         <div class="outer-box">
-            <!-- welcome box -->
-            
+            <!-- intro box -->
             <div class="intro-box">
                 <div class="title-box">
                     <h1>PUBLIC</h1>
                 </div>
                 <div class="nav-box">
-                    <a href="star.html">
+                    <a href="Public/profile.html">
                         <p>PROFILE</p>
                     </a>
-                    <a href="star.html">
+                    <a href="Public/Blog/front.html">
                         <p>BLOG</p>
                     </a>
                 </div>
@@ -59,7 +58,7 @@
             <script type="text/javascript">
                 function matchPassword(){
                     if (document.getElementById("pass").value == "415559"){
-                        window.location.href = "star.html";
+                        window.location.href = "Private/front.html";
                     }
                     else {
                         alert("Wrong Password!");
@@ -68,15 +67,14 @@
             </script>
             <!-- input box -->
             <div class="input-box">
-                <!-- 标题盒子 -->
                 <div class="title-box">
                     <h1>PRIVATE</h1>
                 </div>
-                <!-- 密码盒子 -->
+                <!-- password box -->
                 <div class="password-box">
-                    <input id="pass" type="password" placeholder="password" maxlength="12">
+                    <input id="pass" type="password" placeholder="password" maxlength="12" required>
                 </div>
-                <!-- 按钮盒子 -->
+                <!-- button box -->
                 <div class="btn-box">
                     <button id="submit" onclick="return matchPassword()">Submit</button>
                 </div>
@@ -86,14 +84,14 @@
         <div class="stars">
             <script>
                 const body = document.body
-                //星星脚本代码
+                //stars
                 const starCreate= ()=>{
                     let star=''
-                    //一次生成5颗星星
+                    //5 stars each time
                     for(let i=0;i<5;i++) {
                         star = document.createElement('div')
                         star.classList.add('star')
-                        let r = Math.random()*4 + 1 //半径2~4px
+                        let r = Math.random()*4 + 2 //radius 2~4px
                         star.style.width=r+'px'
                         star.style.height=r+'px'
                         star.style.left=Math.random()*innerWidth+'px'
@@ -107,7 +105,7 @@
                 setInterval(()=>{
                     starCreate()
                 },1000)
-                //流星脚本代码
+                //meteors
                 const meteorCreate=()=>{
                    let meteor=document.createElement('div')
                     meteor.classList.add('meteor')
@@ -125,6 +123,5 @@
                 },1000)
             </script>
         </div>
-        
     </body>
 </html>
