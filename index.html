@@ -8,6 +8,7 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="Home/md5.js"></script>">
         <script src="Home/sha1.js"></script>">
+        <script src="Home/base64.js"></script>">
         <title>Jiaying Li | Home</title>
     </head>
     <body>
@@ -36,7 +37,7 @@
                 function matchPassword(){
                     var getVal = document.getElementById("pass").value
                     if (md5(getVal) + sha1(getVal) == "c03d9faeae779e8ed84131e8ba13be44c1c807c5f85789b736ae510258759dfb20da3076"){
-                        window.location.href = "Private/front.html";
+                        window.location.href = Base64.decode("UHJpdmF0ZS9mcm9udC5odG1s");
                     }
                     else {
                         alert("Wrong Password!");
