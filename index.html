@@ -4,36 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="rabbit.ico">
-        <!-- import index.css-->
         <link rel="stylesheet" href="index.css">
-        <!-- import jquery -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+        <script src="md5.js"></script>">
         <title>Jiaying Li | Home</title>
     </head>
-    <!--
-    <script type="text/javascript">   
-        function password() {   
-        var testV = 1;   
-        var pass1 = prompt('请输入密码','');   
-        while (testV < 3) {   
-        if (!pass1)   
-        history.go(-1);   
-        if (pass1 == "123") {//初始密码123   
-        alert('密码正确');   
-        break;   
-        }   
-        testV+=1;   
-        var pass1 =   
-        prompt('密码错误!请重新输入:');   
-        }   
-        if (pass1!="password" & testV ==3)   
-        history.go(-1);   
-        return " ";   
-        }   
-        document.write(password());   
-    </script>  
-    -->
     <body>
         <div class="banner-box">
             <div class="banner">
@@ -58,13 +33,15 @@
             </div>
             <script type="text/javascript">
                 function matchPassword(){
-                    if (document.getElementById("pass").value == "415559"){
+                    var getVal = document.getElementById("pass").value
+                    if (md5(getVal) == "c03d9faeae779e8ed84131e8ba13be44"){
                         window.location.href = "Private/front.html";
                     }
                     else {
                         alert("Wrong Password!");
                     }
                 }
+            </script>
             </script>
             <!-- input box -->
             <div class="input-box">
