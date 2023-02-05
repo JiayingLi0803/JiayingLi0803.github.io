@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="Home/rabbit.ico">
-        <link rel="stylesheet" href="Home/index.css">
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="Home/md5.js"></script>">
-        <script src="Home/sha1.js"></script>">
-        <script src="Home/base64.js"></script>">
-        <title>Jiaying Li | Home</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Home/rabbit.ico">
+    <link rel="stylesheet" href="Home/index.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="Home/md5.js"></script>">
+    <script src="Home/sha1.js"></script>">
+    <script src="Home/base64.js"></script>">
+    <title>Jiaying Li | Home</title>
+</head>
+
+<body>
+    <div class="page-box">
         <div class="banner-box">
             <div class="banner">
                 <h1>JIAYING LI</h1>
@@ -34,9 +37,9 @@
                 </div>
             </div>
             <script type="text/javascript">
-                function matchPassword(){
+                function matchPassword() {
                     var getVal = document.getElementById("pass").value
-                    if (md5(getVal) + sha1(getVal) == "c03d9faeae779e8ed84131e8ba13be44c1c807c5f85789b736ae510258759dfb20da3076"){
+                    if (md5(getVal) + sha1(getVal) == "c03d9faeae779e8ed84131e8ba13be44c1c807c5f85789b736ae510258759dfb20da3076") {
                         window.location.href = Base64.decode("UHJpdmF0ZS9mcm9udC5odG1s");
                     }
                     else {
@@ -52,7 +55,7 @@
                 </div>
                 <!-- password box -->
                 <div class="password-box">
-                    <input id="pass" type="password" placeholder="password" maxlength="12" required>
+                    <input id="pass" type="password" placeholder="password" maxlength="18" required>
                 </div>
                 <!-- button box -->
                 <div class="btn-box">
@@ -60,48 +63,49 @@
                 </div>
             </div>
         </div>
-        
-        <div class="stars">
-            <script>
-                const body = document.body
-                //stars
-                const starCreate= ()=>{
-                    let star=''
-                    //5 stars each time
-                    for(let i=0;i<5;i++) {
-                        star = document.createElement('div')
-                        star.classList.add('star')
-                        let r = Math.random()*4 + 2 //radius 2~4px
-                        star.style.width=r+'px'
-                        star.style.height=r+'px'
-                        star.style.left=Math.random()*innerWidth+'px'
-                        star.style.top=Math.random()*innerHeight+'px'
-                        body.append(star)       
-                    }  
-                    setTimeout(()=>{
-                            star.remove()
-                        },200)
+    </div>
+    <div class="stars">
+        <script>
+            const body = document.body
+            //stars
+            const starCreate = () => {
+                let star = ''
+                //5 stars each time
+                for (let i = 0; i < 5; i++) {
+                    star = document.createElement('div')
+                    star.classList.add('star')
+                    let r = Math.random() * 4 + 2 //radius 2~4px
+                    star.style.width = r + 'px'
+                    star.style.height = r + 'px'
+                    star.style.left = Math.random() * innerWidth + 'px'
+                    star.style.top = Math.random() * innerHeight + 'px'
+                    body.append(star)
                 }
-                setInterval(()=>{
-                    starCreate()
-                },1000)
-                //meteors
-                const meteorCreate=()=>{
-                   let meteor=document.createElement('div')
-                    meteor.classList.add('meteor')
-                    let size=Math.random()*10+100
-                    meteor.style.width=size+'px'
-                    meteor.style.right=Math.random()*innerWidth+'px'
-                    meteor.style.top=Math.random()*innerHeight+'px'
-                    body.append(meteor)
-                    setTimeout(()=>{
-                        meteor.remove()
-                    },400)
-                }
-                setInterval(()=>{
-                    meteorCreate()
-                },1000)
-            </script>
-        </div>
-    </body>
+                setTimeout(() => {
+                    star.remove()
+                }, 200)
+            }
+            setInterval(() => {
+                starCreate()
+            }, 1000)
+            //meteors
+            const meteorCreate = () => {
+                let meteor = document.createElement('div')
+                meteor.classList.add('meteor')
+                let size = Math.random() * 10 + 100
+                meteor.style.width = size + 'px'
+                meteor.style.right = Math.random() * innerWidth + 'px'
+                meteor.style.top = Math.random() * innerHeight + 'px'
+                body.append(meteor)
+                setTimeout(() => {
+                    meteor.remove()
+                }, 400)
+            }
+            setInterval(() => {
+                meteorCreate()
+            }, 1000)
+        </script>
+    </div>
+</body>
+
 </html>
