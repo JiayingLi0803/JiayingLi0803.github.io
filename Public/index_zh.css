@@ -33,8 +33,11 @@ body {
 .banner-box{
     width:100%;
     height: 10%;
-    top: 3%;
+    top: 0%;
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .banner-box h1{
@@ -44,6 +47,17 @@ body {
     user-select: none;
     text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
     font-size: 70px;
+}
+
+.language {
+    height: 100%;
+    width: 10%;
+    right: 2%;
+    top: 6%;
+    position: fixed;
+}
+.language a{
+    font-size: large;
 }
 
 .outer-box {
@@ -126,7 +140,7 @@ body {
     align-items: center;
 }
 
-.nav-box a{
+a{
     letter-spacing: 2px;
     text-align: center;
     color: rgb(242, 242, 242);
