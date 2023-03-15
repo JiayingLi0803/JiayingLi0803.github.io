@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Home/rabbit.ico">
+    <link rel="stylesheet" href="Home/index.css">
+    <script src="Home/md5.js"></script>">
+    <script src="Home/sha1.js"></script>">
+    <script src="Home/base64.js"></script>">
+    <title>Jiaying Li | Home</title>
+</head>
+
+<body>
+    <div class="page-box">
+        <div class="banner-box">
+            <div class="banner">
+                <h1>JIAYING LI</h1>
+            </div>
+            <div class="language">
+                <a href="./Public/index_zh.html">
+                    <p>中文</p>
+                </a>
+            </div>
+        </div>
+        <!-- outermost box -->
+        <div class="outer-box">
+            <!-- intro box -->
+            <div class="intro-box">
+                <div class="title-box">
+                    <h1>PUBLIC</h1>
+                </div>
+                <div class="nav-box">
+                    <a href="Public/profile.html">
+                        <p>PROFILE</p>
+                    </a>
+                    <a href="Public/Blog/front.html">
+                        <p>BLOG</p>
+                    </a>
+                </div>
+            </div>
+            <script type="text/javascript">
+                function matchPassword() {
+                    var getVal = document.getElementById("pass").value
+                    if (md5(getVal) + sha1(getVal) == "c03d9faeae779e8ed84131e8ba13be44c1c807c5f85789b736ae510258759dfb20da3076") {
+                        window.location.href = Base64.decode("UHJpdmF0ZS9mcm9udC5odG1s");
+                    }
+                    else {
+                        alert("Wrong Password!");
+                    }
+                }
+            </script>
+            </script>
+            <!-- input box -->
+            <div class="input-box">
+                <div class="title-box">
+                    <h1>PRIVATE</h1>
+                </div>
+                <!-- password box -->
+                <div class="password-box">
+                    <input id="pass" type="password" placeholder="password" maxlength="18" required>
+                </div>
+                <!-- button box -->
+                <div class="btn-box">
+                    <button id="submit" onclick="return matchPassword()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>
