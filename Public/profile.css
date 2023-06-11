@@ -1,0 +1,143 @@
+body {
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+}
+
+
+
+.navbar {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex; /* Added */
+  }
+
+  .navbar li {
+    flex: 1; /* Added */
+    text-align: center; /* Added */
+  }
+
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  .navtext{
+    font-size: large;
+  }
+
+  .navbar li a:hover {
+    background-color: #111;
+  }
+
+  .navbar .brand {
+    float: left;
+    font-weight: bold;
+    padding: 14px 20px;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+  }
+
+.profilePhoto{
+    border-radius: 50%;
+}
+
+.underBlock {
+    margin-top: 40px;
+    padding: 40px;
+    
+}
+.aboutBlock{
+    display: flex;
+}
+.contactBlock{
+    width: 30%;
+    padding: 20px;
+    line-height: 1.5;
+}
+.contactBlock a{
+    color: #000;
+}
+.textcontent {
+    color: #666;
+}
+
+.nameBold{
+    font-size: 25px;
+}
+
+.introBlock{
+    width: 70%;
+    padding: 20px;
+}
+
+.introBlock p{
+    line-height: 1.5;
+}
+
+.introBlock a{
+    text-decoration:none;
+    color: rgb(46,139,87);
+}
+.introBlock a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        position: relative;
+      }
+
+    .navbar ul {
+    flex-direction: column;
+    }
+
+    .navbar li {
+    text-align: left;
+    }
+
+    .navbar .brand {
+    float: none;
+    }
+
+    .aboutBlock {
+      flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  }
+  
+  .blankBlock{
+    height: 150px;
+  }
+
+  .pubBlock h1{
+    font-weight: 500;
+  }
+  .pubBlock h2{
+    margin-left: 30px;
+    font-weight: 500;
+  }
+  .pubBlock p{
+    margin-left: 50px;
+  }
+
+  .researchBlock h1{
+    font-weight: 500;
+  }
