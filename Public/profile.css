@@ -99,6 +99,7 @@ font-family: sans-serif;
 .stream{
     width: 100%;
     margin-left: 30px;
+    margin-bottom: 20px;
     display: flex;
   }
 
@@ -138,43 +139,55 @@ font-family: sans-serif;
     .right-column {
       width: 100%;
     }
-  }
+}
   
-  .blankBlock{
+.blankBlock{
     height: 100px;
-  }
+}
 
-  .h1title{
+.h1title{
     font-weight: 500;
-  }
-  .h2title{
+}
+.h2title{
     margin-left: 30px;
+    margin-bottom: 30px;
     font-weight: 500;
-  }
-  .h3title{
+}
+.h3title{
     margin-top: 0;
     font-weight: 500;
-  }
-  .pubBlock p{
+}
+.pubBlock p{
     margin-left: 50px;
-  }
-  .pubBlock a{
+}
+.pubBlock a{
     text-decoration:none;
     color: rgb(46,139,87);
-  }
-  .pubBlock a:hover{
+}
+.pubBlock a:hover{
     text-decoration: underline;
-  }
+}
 
-  .researchBlock h1{
+.researchBlock h1{
     font-weight: 500;
-  }
-  .researchBlock a{
+}
+.researchBlock a{
     text-decoration: none;
     color: rgb(46,139,87);
-  }
-  .researchBlock a:hover{
+}
+.researchBlock a:hover{
     text-decoration: underline;
     color: rgb(46,139,87);
-  }
+}
 
+.hr-twill {
+    width: 100%;
+    float: left;
+    border: 0;
+    padding: 3px;
+    background: repeating-linear-gradient(135deg, #a2a9b6 0px, #a2a9b6 1px, transparent 1px, transparent 6px);
+}
+
+.sepblank {
+    height: 60px;
+}

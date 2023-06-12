@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- import front-page.css-->
+    <link rel="shortcut icon" href="../Home/rabbit.ico">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Jiaying Li | Profile</title>
@@ -14,13 +15,13 @@
     <div class="navbar">
         <ul>
             <li class="brand">Jiaying Li</li>
-            <li class="navtext"><a href="#">About</a></li>
-            <li class="navtext"><a href="#">Research</a></li>
-            <li class="navtext"><a href="#">Publication</a></li>
-            <li class="navtext"><a href="#">CV</a></li>
+            <li class="navtext"><a href="#about">About</a></li>
+            <li class="navtext"><a href="#research">Research</a></li>
+            <li class="navtext"><a href="#publication">Publication</a></li>
+            <li class="navtext"><a href="#cv">CV</a></li>
         </ul>
     </div>
-    <div class="underBlock">
+    <div class="underBlock" id="about">
         <div class="aboutBlock">
             <div class="contactBlock">
                 <img src="../Home/photo.png" style="width: 200px;" class="profilePhoto">
@@ -62,7 +63,7 @@
             </div>
         </div>
         <div class="blankBlock"></div>
-        <div class="pubBlock">
+        <div class="pubBlock" id="publication">
             <h1 class="h1title">Publication</h1>
             <h2 class="h2title">Conference</h2>
             <p>K. Xue, Z. Liu, <strong>J. Li</strong>, X. Ji and H. Qian, "SongBot: An Interactive Music Generation Robotic System for Non-musicians Learning from A Song," <i>2021 IEEE International Conference on Real-time Computing and Robotics (RCAR)</i>, Xining, China, 2021, pp. 1300-1305, doi: 10.1109/RCAR52367.2021.9517454. <a href="Files/songbot.pdf">[PDF]</a></p>
@@ -70,7 +71,7 @@
             <p><strong>J. Li</strong> and N. Condit-Schultz, “Four Chords Go a Long Way: Measuring Chord Progression Similarity in Chinese Popular Music”, <i>2022 Society for Music Perception and Cognition (SMPC)</i>. <a href="Files/SMPC.pdf">[Poster]</a></p>
         </div>
         <div class="blankBlock"></div>
-        <div class="researchBlock">
+        <div class="researchBlock" id="research">
             <h1 class="h1title">Research</h1>
             <h2 class="h2title">Active Projects</h2>
             <div class="stream">
@@ -84,6 +85,18 @@
                     <p class="textcontent">This research project addresses the challenges encountered by students without an engineering background when trying to comprehend the fundamental concepts of digital signal processing (DSP). Concepts such as convolution, autocorrelation, modulation, and the discrete Fourier transform (DFT) often prove difficult to grasp without proper visualization and practical application. To overcome these difficulties and enhance comprehension, we have developed a website featuring interactive modules that allow students to visualize animations and simulations of these DSP concepts. Additionally, the website offers coding practices and exercises specifically designed to assist beginners in acquiring essential audio processing skills. By actively engaging with these interactive tools and practical exercises, students are encouraged to delve deeper into the learning process, resulting in a more profound understanding of DSP principles. The website is implemented using HTML, CSS, and JavaScript, and it is intended for integration into the Audio Technology II lecture curriculum in Fall 2023.</p>
                 </div>
             </div>
+            <div class="stream">
+                <div class="thumbnailfig">
+                    <img class="thumbnailfig" src="Figures/separation.png" style="width:200px">
+                </div>
+                <div class="projectbody">
+                    <h3 class="h3title">Target Speech Separation</h3>
+                    <p>Personal Research Project</p>
+                    <p class="textcontent">This research project aims at separating speech from singing voice by using deep learning models. I've finished the literature review and already started working on the dataset and pipeline.</p>
+                </div>
+            </div>
+            <hr class="hr-twill">
+            <div class="sepblank"></div>
             <h2 class="h2title">Past Projects</h2>
             <div class="stream">
                 <div class="thumbnailfig">
@@ -151,20 +164,14 @@
             </div>
 
 
-
-
-            
-
-            
-
-            <div class="stream">
+            <!-- <div class="stream">
                 <div class="projectbody">
                     <h3 class="h3title"></h3>
                 </div>
                 <div class="thumbnailfig">
 
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Rest of your content -->
