@@ -96,7 +96,20 @@ font-family: sans-serif;
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+.stream{
+    width: 100%;
+    margin-left: 30px;
+    display: flex;
+  }
+
+  .projectbody{
+    width: 80%;
+  }
+  .thumbnailfig{
+    width: 20%;
+  }
+
+@media (max-width: 1100px) {
     .navbar {
         position: relative;
       }
@@ -117,6 +130,10 @@ font-family: sans-serif;
       flex-direction: column;
     }
 
+    .stream {
+        flex-direction: column;
+    }
+
     .left-column,
     .right-column {
       width: 100%;
@@ -124,20 +141,40 @@ font-family: sans-serif;
   }
   
   .blankBlock{
-    height: 150px;
+    height: 100px;
   }
 
-  .pubBlock h1{
+  .h1title{
     font-weight: 500;
   }
-  .pubBlock h2{
+  .h2title{
     margin-left: 30px;
+    font-weight: 500;
+  }
+  .h3title{
+    margin-top: 0;
     font-weight: 500;
   }
   .pubBlock p{
     margin-left: 50px;
   }
+  .pubBlock a{
+    text-decoration:none;
+    color: rgb(46,139,87);
+  }
+  .pubBlock a:hover{
+    text-decoration: underline;
+  }
 
   .researchBlock h1{
     font-weight: 500;
   }
+  .researchBlock a{
+    text-decoration: none;
+    color: rgb(46,139,87);
+  }
+  .researchBlock a:hover{
+    text-decoration: underline;
+    color: rgb(46,139,87);
+  }
+
