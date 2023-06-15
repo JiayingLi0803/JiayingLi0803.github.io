@@ -157,6 +157,9 @@ font-family: sans-serif;
     margin-top: 0;
     font-weight: 500;
 }
+.pubBlock{
+    line-height: 1.5;
+}
 .pubBlock p{
     margin-left: 50px;
 }
@@ -167,7 +170,9 @@ font-family: sans-serif;
 .pubBlock a:hover{
     text-decoration: underline;
 }
-
+.researchBlock{
+    line-height: 1.5;
+}
 .researchBlock h1{
     font-weight: 500;
 }
