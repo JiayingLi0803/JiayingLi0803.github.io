@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>节拍器</title>
+  <style>
+    #slider {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>节拍器</h1>
+  <input type="range" id="slider" min="40" max="200" value="120" step="1" onchange="adjustBPM(this.value)">
+  <p id="bpmDisplay">当前频率: 120 BPM</p>
+  <button id="startButton" onclick="startMetronome()">开始</button>
+  <button id="stopButton" onclick="stopMetronome()">停止</button>
+
+  <script>
+    var audioContext;
+    var oscillator;
+    var intervalId;
+    var bpmDisplay = document.getElementById("bpmDisplay");
+    var slider = document.getElementById("slider");
+    var startButton = document.getElementById("startButton");
+    var stopButton = document.getElementById("stopButton");
+    var bpm = parseInt(slider.value);
+    var duration = 100; // 声音持续时间（毫秒）
+
+    function initAudioContext() {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    function createOscillator() {
+      oscillator = audioContext.createOscillator();
+      oscillator.type = "sine"; // 可以使用不同的波形类型，如 "sine"、"square"、"sawtooth" 或 "triangle"
+      oscillator.frequency.value = 1000; // 滴答声音的频率
+      oscillator.connect(audioContext.destination);
+      oscillator.start();
+    }
+
+    function adjustBPM(value) {
+      bpm = parseInt(value);
+      bpmDisplay.textContent = "当前频率: " + bpm + " BPM";
+    }
+
+    function playTickSound() {
+      createOscillator();
+      setTimeout(function() {
+        oscillator.stop();
+        oscillator.disconnect();
+      }, duration);
+    }
+
+    function startMetronome() {
+      if (audioContext.state === "suspended") {
+        audioContext.resume(); // 恢复音频上下文以便播放声音
+      }
+
+      playTickSound();
+      intervalId = setInterval(playTickSound, 60000 / bpm); // 根据BPM设置循环触发声音
+      startButton.disabled = true;
+      stopButton.disabled = false;
+    }
+
+    function stopMetronome() {
+      clearInterval(intervalId);
+      startButton.disabled = false;
+      stopButton.disabled = true;
+    }
+
+    // 初始化音频上下文
+    window.addEventListener("load", initAudioContext);
+  </script>
+</body>
+</html>

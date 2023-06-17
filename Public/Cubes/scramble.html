@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>魔方打乱器</title>
+        <style>
+          #cube {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+            perspective: 500px;
+          }
+      
+          .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+      
+          .face-front {
+            transform: translateZ(100px);
+          }
+      
+          .face-back {
+            transform: rotateY(180deg) translateZ(100px);
+          }
+      
+          .face-left {
+            transform: rotateY(-90deg) translateZ(100px);
+          }
+      
+          .face-right {
+            transform: rotateY(90deg) translateZ(100px);
+          }
+      
+          .face-top {
+            transform: rotateX(90deg) translateZ(100px);
+          }
+      
+          .face-bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+          }
+        </style>
+      </head>
+<body>
+    <h1>魔方打乱器</h1>
+    <button onclick="shuffleCube()">打乱</button>
+    <button onclick="resetCube()">重置</button>
+    <p id="scrambleFormula"></p>
+    <div id="cube">
+      <div class="face face-front"></div>
+      <div class="face face-back"></div>
+      <div class="face face-left"></div>
+      <div class="face face-right"></div>
+      <div class="face face-top"></div>
+      <div class="face face-bottom"></div>
+    </div>
+
+  <script>
+    // 魔方打乱算法
+    function shuffleCube() {
+      // 打乱公式
+      var moves = ["R", "R'", "L", "L'", "U", "U'", "D", "D'", "F", "F'", "B", "B'"];
+      var scrambleFormula = "";
+
+      for (var i = 0; i < 20; i++) {
+        var randomMove = moves[Math.floor(Math.random() * moves.length)];
+        scrambleFormula += randomMove + " ";
+        performMove(randomMove);
+      }
+
+      document.getElementById("scrambleFormula").textContent = "打乱公式: " + scrambleFormula;
+
+      // 魔方展开图
+      var cube = document.getElementById("cube");
+      cube.innerHTML = "";
+
+      for (var j = 0; j < 9; j++) {
+        var sticker = document.createElement("div");
+        sticker.className = "sticker";
+        cube.appendChild(sticker);
+      }
+    }
+
+    // 执行魔方移动
+    function performMove(move) {
+      var cubeState = [
+        // 定义魔方状态的内部表示
+        // 这里使用一个 2D 数组来表示魔方的各个面
+        // 假设魔方初始状态是完全还原的
+        // 每个方块使用颜色代号来表示
+        ["white", "white", "white", "white", "white", "white", "white", "white", "white"], // 上面
+        ["orange", "orange", "orange", "orange", "orange", "orange", "orange", "orange", "orange"], // 前面
+        ["green", "green", "green", "green", "green", "green", "green", "green", "green"], // 左面
+        ["red", "red", "red", "red", "red", "red", "red", "red", "red"], // 右面
+        ["blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"], // 后面
+        ["yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow"], // 下面
+      ];
+
+      switch (move) {
+        case "R":
+          // 执行右面顺时针旋转
+          rotateFaceClockwise(cubeState, 3);
+          break;
+        case "R'":
+          // 执行右面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 3);
+          break;
+        case "L":
+          // 执行左面顺时针旋转
+          rotateFaceClockwise(cubeState, 2);
+          break;
+        case "L'":
+          // 执行左面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 2);
+          break;
+        case "U":
+          // 执行顶面顺时针旋转
+          rotateFaceClockwise(cubeState, 0);
+          break;
+        case "U'":
+          // 执行顶面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 0);
+          break;
+        case "D":
+          // 执行底面顺时针旋转
+          rotateFaceClockwise(cubeState, 5);
+          break;
+        case "D'":
+          // 执行底面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 5);
+          break;
+        case "F":
+          // 执行前面顺时针旋转
+          rotateFaceClockwise(cubeState, 1);
+          break;
+        case "F'":
+          // 执行前面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 1);
+          break;
+        case "B":
+          // 执行后面顺时针旋转
+          rotateFaceClockwise(cubeState, 4);
+          break;
+        case "B'":
+          // 执行后面逆时针旋转
+          rotateFaceCounterClockwise(cubeState, 4);
+          break;
+        default:
+          console.log("未知移动：" + move);
+          break;
+      }
+
+      // 在控制台上打印更新后的魔方状态
+      console.log(cubeState);
+    }
+
+    // 顺时针旋转一个面
+    function rotateFaceClockwise(cubeState, faceIndex) {
+      var tempRow = cubeState[faceIndex][0];
+
+      // 顺时针旋转角块
+      cubeState[faceIndex][0] = cubeState[faceIndex][6];
+      cubeState[faceIndex][6] = cubeState[faceIndex][8];
+      cubeState[faceIndex][8] = cubeState[faceIndex][2];
+      cubeState[faceIndex][2] = tempRow;
+
+      // 顺时针旋转边块
+      var tempEdge = cubeState[faceIndex][1];
+      cubeState[faceIndex][1] = cubeState[faceIndex][3];
+      cubeState[faceIndex][3] = cubeState[faceIndex][7];
+      cubeState[faceIndex][7] = cubeState[faceIndex][5];
+      cubeState[faceIndex][5] = tempEdge;
+    }
+
+    // 逆时针旋转一个面
+    function rotateFaceCounterClockwise(cubeState, faceIndex) {
+      var tempRow = cubeState[faceIndex][0];
+
+      // 逆时针旋转角块
+      cubeState[faceIndex][0] = cubeState[faceIndex][2];
+      cubeState[faceIndex][2] = cubeState[faceIndex][8];
+      cubeState[faceIndex][8] = cubeState[faceIndex][6];
+      cubeState[faceIndex][6] = tempRow;
+
+      // 逆时针旋转边块
+      var tempEdge = cubeState[faceIndex][1];
+      cubeState[faceIndex][1] = cubeState[faceIndex][5];
+      cubeState[faceIndex][5] = cubeState[faceIndex][7];
+      cubeState[faceIndex][7] = cubeState[faceIndex][3];
+      cubeState[faceIndex][3] = tempEdge;
+    }
+
+    // 重置魔方
+    function resetCube() {
+      document.getElementById("scrambleFormula").textContent = "";
+      document.getElementById("cube").innerHTML = "";
+    }
+  </script>
+</body>
+</html>
