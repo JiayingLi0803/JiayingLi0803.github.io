@@ -110,7 +110,7 @@ font-family: sans-serif;
     width: 20%;
   }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     .navbar {
         position: relative;
       }
@@ -136,8 +136,14 @@ font-family: sans-serif;
     }
 
     .contactBlock,
-    .introBlock {
+    .introBlock,
+    .stream {
       width: 90%;
+    }
+
+    .thumbnailfig,
+    .projectbody {
+        width: 100%;
     }
 }
   
