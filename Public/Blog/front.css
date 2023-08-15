@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: scroll;
+    background-image: url("../Figures/owl.png");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar{
+    width: 5%;
+    height: 50%;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #222;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+    transition: 0.1s;
+}
+.nav-bar:hover{
+    width: 15%;
+    border-radius: 0 30px 30px 0;
+}
+.nav-bar:hover li a{
+    color: #fff;
+}
+.nav-bar::before{
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #111;
+}
+.nav-bar .top{
+    width: calc(100%-15%);
+    margin-left: 5%;
+    height: 20%;
+    background-color: #222;
+    border-radius: 0 0 0 20px;
+    transition: 0.1s;
+}
+.nav-bar .middle{
+    width: calc(100%-30%);
+    margin-left: 7%;
+    height: 20%;
+    background-color: #111;
+    border-radius: 20px;
+}
+.nav-bar .bottom{
+    width: calc(100%-15%);
+    margin-left: 5%;
+    height: 100%;
+    background-color: #222;
+    border-radius: 20px 0 0 0;
+}
+.nav-bar li{
+    position: absolute;
+    top: var(--t);
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar li a{
+    display: block;
+    font-size: large;
+    text-decoration: none;
+    padding: 20% 50%;
+    color: transparent;
+    transition: 0.1s;
+}
+.nav-bar li a:hover{
+    text-decoration: none;
+    opacity: 50%;; 
+    transition: 0.1s;
+}
+.nav-bar li:nth-child(1):hover ~ .top{
+    height: 0%;
+}
+.nav-bar li:nth-child(2):hover ~ .top{
+    height: 20%;
+}
+.nav-bar li:nth-child(3):hover ~ .top{
+    height: 40%;
+}
+.nav-bar li:nth-child(4):hover ~ .top{
+    height: 60%;
+}
+.nav-bar li:nth-child(5):hover ~ .top{
+    height: 80%;
+}
+
+.title{
+    left: 50%;
+    position: fixed;
+    top: 40%;
+    transform: translateX(-50%);
+}
+.title h1{
+    font-size: 90px;
+    color: rgb(52,18,121);
+}
