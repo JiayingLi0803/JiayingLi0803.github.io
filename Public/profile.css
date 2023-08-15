@@ -56,8 +56,8 @@ font-family: sans-serif;
 }
 
 .underBlock {
-    margin-top: 40px;
-    padding: 40px;
+    margin-top: 5%;
+    padding: 5%;
     
 }
 .aboutBlock{
@@ -65,7 +65,7 @@ font-family: sans-serif;
 }
 .contactBlock{
     width: 30%;
-    padding: 20px;
+    padding: 5%;
     line-height: 1.5;
 }
 .contactBlock a{
@@ -81,7 +81,7 @@ font-family: sans-serif;
 
 .introBlock{
     width: 70%;
-    padding: 20px;
+    padding: 5%;
 }
 
 .introBlock p{
@@ -98,8 +98,8 @@ font-family: sans-serif;
 
 .stream{
     width: 95%;
-    margin-left: 30px;
-    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-bottom: 5%;
     display: flex;
   }
 
@@ -110,7 +110,7 @@ font-family: sans-serif;
     width: 20%;
   }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .navbar {
         position: relative;
       }
@@ -135,9 +135,9 @@ font-family: sans-serif;
         flex-direction: column;
     }
 
-    .left-column,
-    .right-column {
-      width: 100%;
+    .contactBlock,
+    .introBlock {
+      width: 90%;
     }
 }
   
@@ -149,8 +149,8 @@ font-family: sans-serif;
     font-weight: 500;
 }
 .h2title{
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-left: 5%;
+    margin-bottom: 5%;
     font-weight: 500;
 }
 .h3title{
@@ -161,7 +161,7 @@ font-family: sans-serif;
     line-height: 1.5;
 }
 .pubBlock p{
-    margin-left: 50px;
+    margin-left: 8%;
 }
 .pubBlock a{
     text-decoration:none;
