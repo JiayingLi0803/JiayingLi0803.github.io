@@ -6,7 +6,7 @@ body {
 
 .navbar {
     background-color: #e6f1f9;
-    position: relative;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100px;
@@ -96,17 +96,17 @@ body {
 }
 .navbar ul li a {
     display: block;
-    width: 100%;
+    width: calc(100% - 50px);
     height: 100%;
     line-height: 66px;
-    text-align: center;
+    text-align: right;
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
     color: #042a41;
     /* border: 1px solid rgba(198, 217, 237, 0.3); */
     /* box-shadow: 0 15px 20px #c6d9ed; */
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .navbar input:checked ~ ul{
@@ -133,9 +133,11 @@ body {
     .navbar ul li {
         list-style: none;
         text-align: center;
+        height: 100px;
     }
     .navbar ul li a{
         display: inline;
+        line-height: 100px;
         padding: 20px 30px;
         /* box-shadow: 5px 3px 6px 1px #c6d9ed, -5px -3px 6px 1px #fff; */
     }
@@ -147,9 +149,8 @@ body {
 }
 
 .underBlock {
-    margin-top: 5%;
-    padding: 5%;
-
+    margin-top: 100px;
+    padding: 2% 5%;
 }
 
 .aboutBlock {
@@ -157,7 +158,7 @@ body {
 }
 
 .contactBlock {
-    width: 30%;
+    width: 300px;
     padding: 5%;
     line-height: 1.5;
 }
@@ -195,7 +196,7 @@ body {
 .stream {
     width: 95%;
     margin-left: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
     display: flex;
 }
 
@@ -205,27 +206,6 @@ body {
 
 .thumbnailfig {
     width: 20%;
-}
-
-@media (max-width: 1250px) {
-    .aboutBlock {
-        flex-direction: column;
-    }
-
-    .stream {
-        flex-direction: column;
-    }
-
-    .contactBlock,
-    .introBlock,
-    .stream {
-        width: 90%;
-    }
-
-    .thumbnailfig,
-    .projectbody {
-        width: 100%;
-    }
 }
 
 .blankBlock {
@@ -238,7 +218,7 @@ body {
 
 .h2title {
     margin-left: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 30px;
     font-weight: 500;
 }
 
@@ -298,4 +278,38 @@ body {
 
 .sepblank {
     height: 60px;
+}
+
+@media (max-width: 1250px) {
+    .aboutBlock {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactBlock{
+        width: 300px;
+        text-align: center;
+    }
+    .introBlock,
+    .stream {
+        width: 90%;
+    }
+    .h1title{
+        text-align: center;
+    }
+
+    .stream {
+        flex-direction: column;
+    }
+
+    .thumbnailfig{
+        width: 100%;
+        text-align: center;
+    }
+    .projectbody {
+        width: 100%;
+    }
+    .blankBlock{
+        height: 20px;
+    }
 }
