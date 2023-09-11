@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: scroll;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.color-pick .color-input{
+    width: 50px;
+    height: 100px;
+    border-color: transparent;
+}

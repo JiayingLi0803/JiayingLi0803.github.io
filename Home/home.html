@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CHBXR3Y5Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8CHBXR3Y5Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="rabbit.ico">
+    <link rel="stylesheet" href="home.css">
+    <script src="md5.js"></script>
+    <script src="sha1.js"></script>
+    <script src="base64.js"></script>
+    <title>Jiaying Li | Home</title>
+</head>
+
+<body>
+    <div class="page-box">
+        <div class="banner-box">
+            <div class="banner">
+                <h1>JIAYING LI</h1>
+            </div>
+            <div class="language">
+                <a href="home_zh.html">
+                    <p>中文</p>
+                </a>
+            </div>
+        </div>
+        <!-- outermost box -->
+        <div class="outer-box">
+            <!-- intro box -->
+            <div class="intro-box">
+                <div class="title-box">
+                    <h1>PUBLIC</h1>
+                </div>
+                <div class="nav-box">
+                    <a href="../index.html">
+                        <p>PROFILE</p>
+                    </a>
+                    <a href="../Public/Blog/front.html">
+                        <p>BLOG</p>
+                    </a>
+                </div>
+            </div>
+            <script type="text/javascript">
+                function matchPassword() {
+                    var getVal = document.getElementById("pass").value
+                    if (md5(getVal) + sha1(getVal) == "c03d9faeae779e8ed84131e8ba13be44c1c807c5f85789b736ae510258759dfb20da3076") {
+                        window.location.href = Base64.decode("Li4vUHJpdmF0ZS9mcm9udC5odG1s");
+                    }
+                    else {
+                        alert("Wrong Password!");
+                    }
+                }
+            </script>
+            </script>
+            <!-- input box -->
+            <div class="input-box">
+                <div class="title-box">
+                    <h1>PRIVATE</h1>
+                </div>
+                <!-- password box -->
+                <div class="password-box">
+                    <input id="pass" type="password" placeholder="password" maxlength="18" required>
+                </div>
+                <!-- button box -->
+                <div class="btn-box">
+                    <button id="submit" onclick="return matchPassword()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>
