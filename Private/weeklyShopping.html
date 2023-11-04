@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CHBXR3Y5Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8CHBXR3Y5Z');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Home/rabbit.ico">
+    <link rel="stylesheet" href="../Public/Blog/blog.css">
+    <title>Jiaying Li | Weekly Shopping Calculator</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    <table>
+        <tr>
+            <th>Proteins</th>
+            <th>Vegetables / Fruits</th>
+            <th>Carbohydrates / Condiments</th>
+            <th>Snacks / Drinks</th>
+            <th>Daily Necessities</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row1col1">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row1col2">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row1col3">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row1col4">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row1col5">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row2col1">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row2col2">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row2col3">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row2col4">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row2col5">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row3col1">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row3col2">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row3col3">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row3col4">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row3col5">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row4col1">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row4col2">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row4col3">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row4col4">
+            </td>
+            <td>
+                <input type="text" placeholder="Name">
+                <input type="number" id="row4col5">
+            </td>
+        </tr>
+        <tr>
+            <td id="sumCol1"></td>
+            <td id="sumCol2"></td>
+            <td id="sumCol3"></td>
+            <td id="sumCol4"></td>
+            <td id="sumCol5"></td>
+        </tr>
+    </table>
+
+    <p>Total Sum: <span id="totalSum"></span></p>
+
+    <script>
+        // JavaScript for calculating column sums and total sum
+        function calculateSums() {
+            for (let i = 1; i <= 5; i++) {
+                let sum = 0;
+                for (let j = 1; j <= 4; j++) {
+                    const cellValue = parseFloat(document.getElementById(`row${j}col${i}`).value) || 0;
+                    sum += cellValue;
+                }
+                document.getElementById(`sumCol${i}`).textContent = sum;
+            }
+
+            // Calculate the total sum (excluding the last row)
+            let totalSum = 0;
+            for (let j = 1; j < 5; j++) {
+                const cellValue = parseFloat(document.getElementById(`sumCol${j}`).textContent) || 0;
+                console.log(document.getElementById(`sumCol${j}`));
+                totalSum += cellValue;
+            }
+            
+            document.getElementById("totalSum").textContent = totalSum;
+        }
+
+        // Attach event listeners to number input elements
+        const numberInputElements = document.querySelectorAll('input[type="number"]');
+        numberInputElements.forEach(function (input) {
+            input.addEventListener("input", calculateSums);
+        });
+    </script>
+    </div>
+</body>
