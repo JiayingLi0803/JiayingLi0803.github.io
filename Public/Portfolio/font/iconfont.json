@@ -1,0 +1,23 @@
+{
+  "id": "4433395",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "38599096",
+      "name": "前进2",
+      "font_class": "forward-2",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "38599094",
+      "name": "后退2",
+      "font_class": "back-2",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

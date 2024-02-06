@@ -1,0 +1,14 @@
+/* Styling for icons from the first icon font */
+.icon-font-next {
+    font-family: 'FirstIconFont';
+    font-size: 24px;
+    color: black; /* Blue color */
+    
+}
+
+/* Styling for icons from the second icon font */
+.icon-font-back {
+    font-family: 'SecondIconFont';
+    font-size: 20px;
+    color: black; /* Orange color */
+}
